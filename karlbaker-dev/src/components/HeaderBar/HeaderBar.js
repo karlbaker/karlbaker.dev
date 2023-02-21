@@ -1,14 +1,11 @@
 import React from 'react';
 import '../bootstrap/css/bootstrap.min.css';
 import './HeaderBar.css';
-import '../fontawesome/css/all.min.css'
-import { Link, useNavigate } from 'react-router-dom';
-import { getAuth, signOut } from 'firebase/auth';
-import useUser from '../../hooks/useUser';
+import { SiLeetcode, SiLinkedin, SiYoutube, SiGithub, SiStackoverflow } from 'react-icons/si';
+import { Link } from 'react-router-dom';
 
 function HeaderBar() {
-    const { user } = useUser();
-    const navigate = useNavigate();
+
     return (
         <div className="top">
             <header className="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar header">
@@ -20,20 +17,14 @@ function HeaderBar() {
                             <li><Link to="/resume">Resume</Link></li>
                             <li><Link to="/projects">Projects</Link></li>
                             <li><Link to="/blog">Blog</Link></li>
-                            <li><a href="https://github.com/karlbaker" target="_blank" rel="noreferrer"><i className="fab fa-github-square fa-xl" /></a></li>
-                            <li><a href="https://www.linkedin.com/in/karlbaker-85/" target="_blank" rel="noreferrer"><i className="fab fa-linkedin fa-xl" /></a></li>
-                            <li><a href="https://www.youtube.com/c/LetsAutomateIt" target="_blank" rel="noreferrer"><i className="fab fa-youtube fa-xl" /></a></li>  
+                            <li><a href="https://github.com/karlbaker" target="_blank" rel="noreferrer"><SiGithub /></a></li>
+                            <li><a href="https://www.linkedin.com/in/karlbaker-85/" target="_blank" rel="noreferrer"><SiLinkedin /></a></li>
+                            <li><a href="https://www.youtube.com/c/LetsAutomateIt" target="_blank" rel="noreferrer"><SiYoutube /></a></li>
+                            <li><a href="https://leetcode.com/karlbaker/" target="_blank" rel="noreferrer"><SiLeetcode /></a></li>
+                            <li><a href="https://stackoverflow.com/users/2233118/karl" target="_blank" rel="noreferrer"><SiStackoverflow /></a></li>
                         </ul>
                         <div className='nav-right'>
-                            { user 
-                                ? <button
-                                    onClick={() => {
-                                        signOut(getAuth())
-                                    }}>Log Out</button>
-                                : <button
-                                    onClick={() => {
-                                        navigate('/login')
-                                    }}>Log In</button> }
+                           
                         </div>
                 </nav>
             </header>

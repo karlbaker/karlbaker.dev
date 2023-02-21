@@ -8,6 +8,7 @@ import ResumePage from './pages/Resume/ResumePage';
 import NotFoundPage from './pages/NotFoundPage';
 import LoginPage from './pages/LoginPage';
 import CreateAccountPage from './pages/CreateAccountPage';
+import ProjectPage from './pages/Projects/ProjectPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<HomePage />} exact />
         <Route path="/blog" element={<ArticlesListPage />} />
         <Route path="/blog/:articleId" element={<ArticlePage />} />
+        <Route path="/projects" element={<ProjectPage />} />
         <Route path="/resume" element={<ResumePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/create-account" element={<CreateAccountPage />} />
